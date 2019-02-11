@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+                name="data"
+                type="com.example.simplesurveysample.model.QuestionModel"/>
+    </data>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+                android:text="@{data.categoryName??data.categoryName}"
+                tools:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/categoryTextView"/>
+        <TextView
+                android:text="@{data.questionText??data.questionText}"
+                tools:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/questionTextView"/>
+        <TextView
+                android:text="@{data.questionId??(data.questionId+1)}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/countTextView"/>
+        <EditText android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:id="@+id/questionAnswerEditText" android:inputType="text"/>
+        <Button
+                android:text="@string/next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/nextButton"/>
+        <Button
+                android:text="@string/previous"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/previousButton"/>
+        <Button
+                android:text="@string/skip_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/skipCategoryButton"/>
+    </LinearLayout>
+</layout>
